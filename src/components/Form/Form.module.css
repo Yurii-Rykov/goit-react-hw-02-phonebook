@@ -15,5 +15,10 @@
     border-radius: 5px;
 }
 .mainForm_btn {
+    composes: mainForm_input;
+    background-color: black;
+    color: white;
+    margin-right: auto;
+    margin-left: auto;
     
 }
