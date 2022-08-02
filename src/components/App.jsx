@@ -15,9 +15,12 @@ class App extends React.Component {
   };
 
   formData = data => {
+    if(this.state.contacts.find(e => e.name === data.name)){
+      alert(`${data.name} is already in contacts`)
+    }else{
     this.setState(prevState => ({
       contacts: [data, ...prevState.contacts],
-    }));
+    }));}
   };
   changeFilter = e => {
     this.setState({ filter: e.currentTarget.value });

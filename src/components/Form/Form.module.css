@@ -10,9 +10,10 @@
 .mainForm_input {
     margin-top: 10px;
     width: 300px;
-    height: 30px;
+    height: 40px;
     border: 2px solid black;
     border-radius: 5px;
+    box-sizing: border-box;
 }
 .mainForm_btn {
     composes: mainForm_input;
@@ -20,5 +21,4 @@
     color: white;
     margin-right: auto;
     margin-left: auto;
-    
 }
