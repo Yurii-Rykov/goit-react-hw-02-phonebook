@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { nanoid } from 'nanoid';
+import s from './Form.module.css'
 
 class Form extends Component {
   state = {
@@ -19,6 +20,7 @@ class Form extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
+
     this.props.onSubmitForm({
       name: this.state.name,
       number: this.state.number,
@@ -31,11 +33,13 @@ class Form extends Component {
     this.setState({ name: '', number: '' });
   };
 
+  doubleName = () => {};
+
   render() {
     return (
       <>
-        <form onSubmit={this.handleSubmit}>
-          <label htmlFor={this.inputNameID}>
+        <form onSubmit={this.handleSubmit} className={s.mainForm}>
+          <label htmlFor={this.inputNameID} className={s.mainForm_label}>
             Name
             <input
               type="text"
@@ -46,9 +50,10 @@ class Form extends Component {
               value={this.state.name}
               onChange={this.inputValue}
               id={this.inputNameID}
+              className={s.mainForm_input}
             />
           </label>
-          <label htmlFor={this.inputNumberID}>
+          <label htmlFor={this.inputNumberID} className={s.mainForm_label}>
             Number
             <input
               type="tel"
@@ -59,9 +64,10 @@ class Form extends Component {
               value={this.state.number}
               onChange={this.inputValue}
               id={this.inputNumberID}
+              className={s.mainForm_input}
             />
           </label>
-          <button type="submit">Add contact</button>
+          <button type="submit" className={s.mainForm_btn}>Add contact</button>
         </form>
       </>
     );
