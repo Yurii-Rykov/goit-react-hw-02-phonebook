@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { nanoid } from 'nanoid';
 import s from './Form.module.css'
+import PropTypes from 'prop-types'
 
 class Form extends Component {
   state = {
@@ -17,6 +18,9 @@ class Form extends Component {
       [event.currentTarget.number]: event.currentTarget.value,
     });
   };
+  static propTypes ={
+    onSubmitForm: PropTypes.func.isRequired
+  }
 
   handleSubmit = e => {
     e.preventDefault();
